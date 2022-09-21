@@ -1,5 +1,4 @@
-import { FluentComponentType, fluentNames } from '../types/fluentTypes'
-import { Tag } from '../types/codeTypes'
+import { FluentComponentType, fluentNames, Tag } from '../types'
 import {
   parseActivityItem,
   parseBreadcrumb,
@@ -12,6 +11,7 @@ import {
   parseDropdown,
   parseFacePile,
   parseGroupedList,
+  parseIcon,
   parseLabel,
   parseLink,
   parseMessageBar,
@@ -48,8 +48,10 @@ export const parseFigmaNode = (node: SceneNode, tag: Tag) => {
       case FluentComponentType.PrimaryButton:
       case FluentComponentType.DefaultButton:
       case FluentComponentType.ActionButton:
-      case FluentComponentType.IconButton:
         parseButton(node, tag)
+        break
+      case FluentComponentType.IconButton:
+        parseIcon(node, tag)
         break
       case FluentComponentType.Link:
         parseLink(node, tag)

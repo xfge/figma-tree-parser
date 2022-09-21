@@ -1,7 +1,7 @@
 import { CssStyle, UnitType } from './types'
 import { buildTagTree } from './buildTagTree'
 import { buildCode } from './buildCode'
-import { buildCssString } from './cssParser/buildCssString'
+import { buildCssString } from './cssParser'
 
 export const generate = (node: SceneNode, config: { cssStyle?: CssStyle; unitType?: UnitType }): { code: string; css: string } => {
   let cssStyle = config.cssStyle

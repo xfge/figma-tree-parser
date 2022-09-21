@@ -1,4 +1,5 @@
 export * from './code'
 export * from './types'
+export * from './cssParser'
 export * from './buildTagTree'
 export * from './buildCode'
