@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --write"
+    "prettier": "prettier --write",
+    "build": "tsc",
+    "publish-lib": "npm run build && npm publish"
   },
   "keywords": [
     "figma",
