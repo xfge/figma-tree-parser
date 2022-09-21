@@ -113,10 +113,15 @@ export function getCssDataForTag(node: SceneNode, unitType: UnitType): CSSData {
     }
 
     if (node.type === 'TEXT') {
+      const fontFamily = node.fontName ? (node.fontName as FontName).family : (node as any).fontFamily;
+      const lineHeightUnit = node.lineHeight ? (node.lineHeight as LineHeight).unit : (node as any).lineHeightUnit;
+      const letterSpacingUnit = node.letterSpacing ? (node.letterSpacing as LetterSpacing).unit : 'PIXELS';
+      const LineHeightValue = node.lineHeight ? (node.lineHeight as LineHeightWithValue).value : (node as any).lineHeightPx;
+
       properties.push({ name: 'text-align', value: textAlignCssValues[node.textAlignHorizontal] })
       properties.push({ name: 'vertical-align', value: textVerticalAlignCssValues[node.textAlignVertical] })
       properties.push({ name: 'font-size', value: `${node.fontSize as number}px` })
-      properties.push({ name: 'font-family', value: (node.fontName as FontName).family })
+      properties.push({ name: 'font-family', value: fontFamily })
 
       const letterSpacing = node.letterSpacing as LetterSpacing
       if (letterSpacing.value !== 0) {
@@ -131,11 +136,11 @@ export function getCssDataForTag(node: SceneNode, unitType: UnitType): CSSData {
       properties.push({
         name: 'line-height',
         value:
-          (node.lineHeight as LineHeight).unit === 'AUTO'
+          lineHeightUnit === 'AUTO'
             ? 'auto'
-            : (node.letterSpacing as LetterSpacing).unit === 'PIXELS'
-            ? buildSizeStringByUnit((node.lineHeight as LineHeightWithValue).value, unitType)
-            : (node.lineHeight as LineHeightWithValue).value + '%'
+            : letterSpacingUnit === 'PIXELS'
+            ? buildSizeStringByUnit(LineHeightValue, unitType)
+            : LineHeightValue + '%'
       })
 
       if (node.textDecoration === 'STRIKETHROUGH' || node.textDecoration === 'UNDERLINE') {
