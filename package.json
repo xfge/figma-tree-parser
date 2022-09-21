@@ -1,0 +1,36 @@
+{
+  "name": "figma-tree-parser",
+  "version": "1.0.3",
+  "description": "Translate a Figma JSON tree to a React component tree",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write"
+  },
+  "keywords": [
+    "figma",
+    "react",
+    "typescript"
+  ],
+  "author": "Xiaofei Ge <xfge.cn@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json5": "^2.2.1"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.52.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "prettier": "2.2.1",
+    "typescript": "^4.8.3"
+  }
+}
