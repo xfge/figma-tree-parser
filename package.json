@@ -21,6 +21,11 @@
   "dependencies": {
     "json5": "^2.2.1"
   },
+  "homepage": "https://github.com/xfge/figma-tree-parser",
+  "bugs": {
+    "url": "https://github.com/xfge/figma-tree-parser/issues",
+    "email": "xfge.cn@gmail.com"
+  },
   "devDependencies": {
     "@figma/plugin-typings": "^1.52.0",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
